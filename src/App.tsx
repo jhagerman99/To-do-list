@@ -12,7 +12,7 @@ const App = () => {
       id: 1,
       title: "Progamming",
       description: "make to-do list aplication with React typscript",
-      mark: false,
+      mark: true,
     },
   ]);
   const { setItem, getItem } = useLocalStorage("expenses");
@@ -27,10 +27,7 @@ const App = () => {
   //Update local storage
   {
     useEffect(() => {
-      if (expenses.length !== 0) {
         setItem(expenses);
-        console.log(getItem());
-      }
     }, [expenses]);
   }
 
